@@ -1,8 +1,9 @@
 # AlfaGadgets
 Gadgets for windows 10 with modern look and feel
 
-This a real time render gadgets will work with all resolutions
-No image inside, which mean the gadget will use internet explorer engine to render design.
+This a real time render gadgets will work with all resolutions.
+
+No image included, which mean the gadget will use internet explorer engine to render design.
 
 **Version Number: 1.0**
 
