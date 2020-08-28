@@ -42,5 +42,5 @@ https://www.paypal.com/paypalme/fahddaher
 **Current status** : test
 
 
-![Light](https://octodex.github.com/images/yaktocat.png)
-![Dark](https://octodex.github.com/images/yaktocat.png)
+![Light](https://github.com/fahdd95/AlfaGadgets/blob/master/Preview/Light.png)
+![Dark](https://github.com/fahdd95/AlfaGadgets/blob/master/Preview/Dark.png)
