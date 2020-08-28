@@ -3,7 +3,7 @@ Gadgets for windows 10 with modern look and feel
 
 This is a real time render gadgets will work with all resolutions.
 
-No image included, which mean the gadget will use internet explorer engine to render design.
+No image included, which mean the gadget will use internet explorer engine to render design, that's will give you a very high resolution gadget.
 
 **Version Number: 1.0**
 
