@@ -13,11 +13,16 @@ Just install 8GadgetPack or Gadgetarian or any similar program.
 I will build:
 
 1- Google Translate Gadget
+
 2- Music Player Gadget
+
 3- And many more :-)
 
+
 If you have any problem just tell me.
+
 You can send your suggest if you have a very good idea.
+
 You can raise your chance to have what you need of Gadgets by support me. 
 
 
