@@ -10,7 +10,7 @@ No image included, which mean the gadget will use internet explorer engine to re
 # Installation
 1- install 8GadgetPack or Gadgetarian or any similar program.
 
-2- go to Alfa Gadgets folder, Download and install gadgets
+2- go to [Alfa Gadgets](https://github.com/fahdd95/AlfaGadgets/tree/master/Alfa%20Gadgets) folder, Download and install gadgets
 
 **Note:** all gadgets will work immediately except Network meter because you have to give the dll permission.
 
