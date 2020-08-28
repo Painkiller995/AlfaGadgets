@@ -16,9 +16,11 @@ I will build:
 
 2- Music Player Gadget
 
-3- Make my own version of gadget installation pack (No pre installed Gadgets).
+3- Adding windows theme colors for all gadgets.
 
-4- And many more :-)
+4- Make my own version of gadget installation pack (No pre installed Gadgets).
+
+5- And many more :-)
 
 
 If you have any problem just tell me.
