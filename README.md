@@ -8,8 +8,10 @@ No image included, which mean the gadget will use internet explorer engine to re
 **Version Number: 1.0**
 
 # Installation
-Just install 8GadgetPack or Gadgetarian or any similar program.
+1- install 8GadgetPack or Gadgetarian or any similar program.
+2- go to Alfa Gadgets and download and install gadgets
 
+**Note:** all gadgets will work immediately except Network meter because you have to give the dll permission.
 
 # What Next ?
 
