@@ -16,7 +16,9 @@ I will build:
 
 2- Music Player Gadget
 
-3- And many more :-)
+3- Make my own version of gadget installation pack
+
+4- And many more :-)
 
 
 If you have any problem just tell me.
