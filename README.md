@@ -9,6 +9,7 @@ Just install 8GadgetPack or Gadgetarian or any similar program.
 
 
 What Next ?
+
 I will build:
 1- Google Translate Gadget
 2- Music Player Gadget
