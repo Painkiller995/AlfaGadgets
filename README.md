@@ -14,6 +14,10 @@ No image included, which mean the gadget will use internet explorer engine to re
 
 **Note:** all gadgets will work immediately except Network meter because you have to give the dll permission.
 
+Buy me a coffee:
+https://www.paypal.com/paypalme/fahddaher
+
+
 # What Next ?
 
 I will build:
@@ -39,7 +43,7 @@ You can raise your chance to have what you need of Gadgets by support me.
 Follow me:
 https://twitter.com/fahddaher
 
-Buy me a coffee:
+Donation link:
 https://www.paypal.com/paypalme/fahddaher
 
 
