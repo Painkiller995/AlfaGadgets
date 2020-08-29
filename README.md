@@ -7,6 +7,9 @@ No image included, which mean the gadget will use internet explorer engine to re
 
 **Version Number: 1.0**
 
+**Current status** : test
+
+
 # Installation
 1- install 8GadgetPack or Gadgetarian or any similar program.
 
@@ -46,8 +49,6 @@ https://twitter.com/fahddaher
 Donation link:
 https://www.paypal.com/paypalme/fahddaher
 
-
-**Current status** : test
 
 
 ![Light](https://github.com/fahdd95/AlfaGadgets/blob/master/Preview/Light.png)
