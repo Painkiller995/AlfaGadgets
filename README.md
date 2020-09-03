@@ -9,6 +9,14 @@ No image included, which mean the gadget will use internet explorer engine to re
 
 **Current status** : test
 
+# Why AlfaGadgets
+
+Why AlfaGadgets? i can use Rainmeter instead.
+
+Yep, you can use Rainmeter, but the main problem in this program are the resolution.
+
+if you use AlfaGadgets you will get realtime gadget render, thank to microsoft sidebar and 8gadgetpack maker who did alot of work to make it run on windows 10.
+
 
 # Installation
 1- install 8GadgetPack or Gadgetarian or any similar program.
