@@ -43,6 +43,10 @@ I will build:
 
 5- And many more :-)
 
+# History
+
+04/09/2020   Add graph color change feature for AlfaCPUandRAMMeter.
+
 ##
 
 If you have any problem just tell me.
