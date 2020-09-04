@@ -43,6 +43,8 @@ I will build:
 
 # History
 
+04/09/2020   Add bar color change feature for AlfaBatteryinfo.
+
 04/09/2020   Add bar color change feature for AlfaWiFiSignal.
 
 04/09/2020   Add bar color change feature for AlfaVolumeControl.
