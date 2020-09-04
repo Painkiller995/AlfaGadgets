@@ -45,6 +45,8 @@ I will build:
 
 # History
 
+04/09/2020   Add bar color change feature for AlfaWiFiSignal.
+
 04/09/2020   Add bar color change feature for AlfaVolumeControl.
 
 03/09/2020   Add graph color change feature for AlfaCPUandRAMMeter.
