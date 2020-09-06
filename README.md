@@ -74,3 +74,4 @@ https://www.paypal.com/paypalme/fahddaher
 ![Light](https://github.com/fahdd95/AlfaGadgets/blob/master/Preview/Light.png)
 ![Dark](https://github.com/fahdd95/AlfaGadgets/blob/master/Preview/Dark.png)
 ![Transparent](https://github.com/fahdd95/AlfaGadgets/blob/master/Preview/Transparent.png)
+![SmallSize](https://github.com/fahdd95/AlfaGadgets/blob/master/Preview/SmallSize.png)
