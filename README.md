@@ -33,11 +33,13 @@ https://www.paypal.com/paypalme/fahddaher
 
 I will build:
 
-1- AlfaTranslate Gadget
+1- AlfaAppLauncher Gadget
 
 2- AlfaClipboard Gadget
 
-3- And many more :-)
+3- Alfa Gadgets resizer Tool
+
+4- And many more :-)
 
 # History
 
