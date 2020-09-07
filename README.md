@@ -33,9 +33,9 @@ https://www.paypal.com/paypalme/fahddaher
 
 I will build:
 
-1- Google Translate Gadget
+1- AlfaTranslate Gadget
 
-2- Music Player Gadget
+2- AlfaClipboard Gadget
 
 3- And many more :-)
 
