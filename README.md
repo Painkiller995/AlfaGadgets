@@ -45,6 +45,7 @@ I will build:
 
 # History
 
+
 05/09/2020   New Gadget AlfaBrightnessControl V1.0 . 
 
 04/09/2020   Add bar color change feature for AlfaBatteryinfo.
