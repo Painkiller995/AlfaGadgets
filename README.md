@@ -39,7 +39,9 @@ I will build:
 
 3- Alfa Gadgets resizer Tool
 
-4- And many more :-)
+4- AlfaGadgets Auto installer, one click after install 8gadgetpack you will have all AlfaGadgets 
+
+5- And many more :-)
 
 # History
 
