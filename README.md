@@ -39,7 +39,7 @@ I will build:
 
 3- Alfa Gadgets resizer Tool
 
-4- AlfaGadgets Auto installer, one click after install 8gadgetpack you will have all AlfaGadgets 
+4- AlfaGadgets Auto installer, one click after install 8gadgetpack you will have all AlfaGadgets (this installer will include ability to delete old pre installed gadgets)
 
 5- And many more :-)
 
