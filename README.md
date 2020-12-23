@@ -45,6 +45,7 @@ I will build:
 
 # History
 
+23/12/2020   Update v1.1 for many Gadgets, fix design, bugs and add background color change feature
 
 05/09/2020   New Gadget AlfaBrightnessControl V1.0 . 
 
