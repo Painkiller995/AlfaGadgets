@@ -36,13 +36,11 @@ I will build:
 
 2- AlfaClipboard Gadget
 
-3- Alfa Gadgets resizer Tool
-
-4- AlfaGadgets Auto installer, one click after install 8gadgetpack you will have all AlfaGadgets (this installer will include ability to delete old pre installed gadgets)
-
-5- And many more :-)
+3- And many more :-)
 
 # History
+
+26/12/2020    Alfa Gadgets resizer Tool , AlfaGadgets Auto installer
 
 24/12/2020   Add Wifi feature for AlfaNetworkMeter.
 
