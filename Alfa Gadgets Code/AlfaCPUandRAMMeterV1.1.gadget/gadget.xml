@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gadget>
+	<name>Alfa CPU and RAM Meter</name>
+	<namespace>later</namespace>
+	<version>1.1</version>
+	<author name="Fahd Daher">
+		<info url="https://twitter.com/fahddaher" text="More" />
+		<logo height="48" width="48" src="Epitope.png" />
+	</author>
+	<copyright>© 2020 By FahdDaher</copyright>
+	<description>Realtime CPU and RAM Meter</description>
+	<icons>
+		<icon height="48" width="48" src="prv.png" />
+	</icons>
+	<hosts>
+		<host name="sidebar">
+			<base type="HTML" apiVersion="1.0.0.0" src="gadget.html" />
+			<permissions>Full</permissions>
+			<platform minPlatformVersion="1.0"/>
+			<defaultImage src="screen.png" />
+			<autoscaleDPI>true</autoscaleDPI>
+    </host>
+	</hosts>
+</gadget>

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Alfa CPU and RAM Meter</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="js/graph.js"></script>
+  </head>
+
+  <body id="mainbody" onload="Initialize();TimeEvent();">
+    <div style="width: 355px; position: relative; top: 10; overflow: hidden">
+      <span id="header">CPU</span>
+      <span id="cpuusage">CPU</span>
+      <span id="ramus">RAM</span>
+      <span id="ramavailable">Available RAM</span>
+
+      <div
+        style="height:260px; width:355px;line- vertical-align: bottom; padding:0;"
+      >
+        <nobr>
+          <div id="l" style="display: inline">
+            <span class="spana" id="s0" style="height: 265px"></span>
+            <script>
+              for (i = 1; i <= len; i++) {
+                document.write("<span class='spana' id=s" + i + " ></span>");
+              }
+            </script>
+          </div>
+          <div id="r" style="display: inline; width: 355px">
+            <script>
+              for (i = len + 1; i <= len * 2; i++)
+                document.write(
+                  "<span class='spana'  id=s" +
+                    i +
+                    " style='display:none;'></span>"
+                );
+            </script>
+          </div>
+        </nobr>
+      </div>
+    </div>
+  </body>
+</html>

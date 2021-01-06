@@ -1,0 +1,415 @@
+<html>
+   <head>
+      <title>Options</title>
+      <script>
+         var speed1 = 1000; 
+         var speed2 = 250; 
+         var speed3 = 100; 
+         var speed4 = 50; 
+         
+         function LoadSettings(){
+         
+         
+         try{
+           System.Gadget.onSettingsClosing = onclose;
+         } catch(e) {};
+         
+           
+         try{
+         thememode.value =  System.Gadget.Settings.readString("background");
+         } catch(e) {};
+         
+         try{
+         graphcolor.value =  System.Gadget.Settings.readString("graph");
+         } catch(e) {};
+           
+         speed = "100";
+         
+         try {
+           speed = System.Gadget.Settings.readString
+         ("speed");
+         } catch(e) {};
+         if(speed) {;} else speed = "1000";  
+         vspeed = parseInt(speed);  
+         
+         txtCustomSpeed.value = speed;
+         if(vspeed==speed1) { cboSpeed.value = 1; txtCustomSpeed.readOnly = true; }
+         else if (vspeed==speed2) { cboSpeed.value = 2; txtCustomSpeed.readOnly = true; }
+         else if (vspeed==speed3) { cboSpeed.value = 3; txtCustomSpeed.readOnly = true; }
+         else if (vspeed==speed4) { cboSpeed.value = 4; txtCustomSpeed.readOnly = true; }
+         else { cboSpeed.value = 5; txtCustomSpeed.readOnly = false; }
+         txtCustomSpeed.tabIndex = txtCustomSpeed.readOnly?-1:0;
+         txtCustomSpeed.disabled = txtCustomSpeed.readOnly;
+         
+         cores = 1;
+         try { 
+           cores = System.Machine.CPUs.count; 
+         } catch(e) {};
+         if(cores==1){
+           var o = document.createElement('<option value=1>'); 
+           cboCore.options.add(o);
+           o.innerText='Single CPU';
+         } else {
+           var o = document.createElement('<option value=0>');
+           cboCore.options.add(o);
+           o.innerText='All Cores';
+           for(i=1;i<=cores;i++){
+             o = document.createElement('<option value='+i+'>');
+             cboCore.options.add(o);
+             o.innerText='Core #'+i;
+           }
+         }
+         
+         
+         ncore = "1";
+         try {
+           ncore = System.Gadget.Settings.readString
+         ("core");
+         } catch(e) {};
+         if(ncore) {;} else if(cores<=1) ncore = "1"; else ncore="0"; 
+         cboCore.value = parseInt(ncore);
+         
+         
+         caption = '1';
+         try {
+           caption = System.Gadget.Settings.readString
+         ("caption");
+         } catch(e) {};
+         if(caption) {;} else caption = "1"; 
+         if(caption=="1") chkName.checked = true;
+         
+         }
+         
+         function CboChanged(){
+         if(cboSpeed.value==1) txtCustomSpeed.value = speed1+'';
+         else if(cboSpeed.value==2) txtCustomSpeed.value = speed2+'';
+         else if(cboSpeed.value==3) txtCustomSpeed.value = speed3+'';
+         else if(cboSpeed.value==4) txtCustomSpeed.value = speed4+'';
+         txtCustomSpeed.readOnly = (cboSpeed.value<=4);
+         txtCustomSpeed.tabIndex = txtCustomSpeed.readOnly?-1:0;
+         txtCustomSpeed.disabled = txtCustomSpeed.readOnly;
+         if(!txtCustomSpeed.readOnly) txtCustomSpeed.focus();
+         }
+         
+         function onclose(event){
+           
+         if(event.closeAction == event.Action.commit){
+         
+           System.Gadget.Settings.write
+         ("caption",(chkName.checked?"1":"0"));
+           System.Gadget.Settings.write
+         ("core",(cboCore.value+""));
+           System.Gadget.Settings.write
+         ("speed",txtCustomSpeed.value);
+           System.Gadget.Settings.write
+         ("background",thememode.value);
+           System.Gadget.Settings.write
+         ("graph",graphcolor.value);
+         }
+         event.cancel = false;
+         }
+         
+      </script>
+      <style type="text/css">
+         body
+         {
+         margin:0px;
+         font-family: Segoe UI, Tahoma, sans-serif;
+         font-size:12px;
+         width:260px;
+         height:120px;
+         }
+         table
+         {
+         font-size:12px;
+         font-family: Segoe UI, Tahoma, sans-serif;
+         }
+      </style>
+   </head>
+   <body style="height: 250px;" onload="LoadSettings(); onLoad();" onunload="onUnload()">
+      <table border="0" width="260" cellpadding="0" cellspacing="0">
+         <tr>
+            <td valign="middle">CPU Cores:</td>
+            <td valign="middle" colspan=2>
+               <select id=cboCore style='width:95px;'>
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <td colspan=3>&nbsp;
+         <tr>
+            <td valign="middle">Update Time:</td>
+            <td valign="middle">
+               <select id=cboSpeed onchange="CboChanged();" style='width:95px;'>
+                  <option value=1>Slow rec</option>
+                  <option value=2>Normal</option>
+                  <option value=3>Fast</option>
+                  <option value=4>Super Fast</option>
+                  <option value=5>Custom</option>
+               </select>
+            </td>
+            <td valign="middle" style="display:;">
+               <input type=text id=txtCustomSpeed size=5 maxlength=6 value=1000 onblur="v=parseInt(this.value);if(isNaN(v)) this.value='100'; else if(v<20) this.value='20'; else this.value=v;">
+               <span style="position:relative;top:-4px;">ms
+            </td>
+         <tr>
+            <td colspan=3>&nbsp;
+         <tr>
+            <td valign="top" colspan=2>
+               <input type="checkbox" id="chkName"><label for="chkName">Display CPU Name</label>
+            </td>
+            </td>
+         </tr>
+      </table>
+      <br>      
+      <span>
+         <td valign="middle">Background Color:</td>
+         <td valign="middle">
+            <select id="thememode" name="background" style="width:100;">
+               <option
+                  value="rgb(16, 16, 16)"
+                  style="background-color: rgb(16, 16, 16)"
+                  >
+                  Default
+               </option>
+               <option
+                  value="rgb(238, 238, 238)"
+                  style="background-color: rgb(238, 238, 238)"
+                  ></option>
+               <option
+                  value="rgb(66, 156, 227)"
+                  style="background-color: rgb(66, 156, 227)"
+                  ></option>
+               <option
+                  value="rgb(253, 183, 0)"
+                  style="background-color: rgb(253, 183, 0)"
+                  ></option>
+               <option
+                  value="rgb(255, 140, 0)"
+                  style="background-color: rgb(255, 140, 0)"
+                  ></option>
+               <option
+                  value="rgb(247, 99, 12)"
+                  style="background-color: rgb(247, 99, 12)"
+                  ></option>
+               <option
+                  value="rgb(197, 78, 16)"
+                  style="background-color: rgb(197, 78, 16)"
+                  ></option>
+               <option
+                  value="rgb(218, 59, 1)"
+                  style="background-color: rgb(218, 59, 1)"
+                  ></option>
+               <option
+                  value="rgb(239, 105, 80)"
+                  style="background-color: rgb(239, 105, 80)"
+                  ></option>
+               <option
+                  value="rgb(209, 52, 56)"
+                  style="background-color: rgb(209, 52, 56)"
+                  ></option>
+               <option
+                  value="rgb(255, 67, 67)"
+                  style="background-color: rgb(255, 67, 67)"
+                  ></option>
+               <option
+                  value="rgb(231, 72, 86)"
+                  style="background-color: rgb(231, 72, 86)"
+                  ></option>
+               <option
+                  value="rgb(232, 17, 35)"
+                  style="background-color: rgb(232, 17, 35)"
+                  ></option>
+               <option
+                  value="rgb(234, 0, 94)"
+                  style="background-color: rgb(234, 0, 94)"
+                  ></option>
+               <option
+                  value="rgb(195, 0, 82)"
+                  style="background-color: rgb(195, 0, 82)"
+                  ></option>
+               <option
+                  value="rgb(227, 0, 140)"
+                  style="background-color: rgb(227, 0, 140)"
+                  ></option>
+               <option
+                  value="rgb(191, 0, 119)"
+                  style="background-color: rgb(191, 0, 119)"
+                  ></option>
+               <option
+                  value="rgb(194, 57, 179)"
+                  style="background-color: rgb(194, 57, 179)"
+                  ></option>
+               <option
+                  value="rgb(154, 0, 137)"
+                  style="background-color: rgb(154, 0, 137)"
+                  ></option>
+               <option
+                  value="rgb(0, 120, 215)"
+                  style="background-color: rgb(0, 120, 215)"
+                  ></option>
+               <option
+                  value="rgb(0, 99, 177)"
+                  style="background-color: rgb(0, 99, 177)"
+                  ></option>
+               <option
+                  value="rgb(142, 140, 216)"
+                  style="background-color: rgb(142, 140, 216)"
+                  ></option>
+               <option
+                  value="rgb(107, 105, 214)"
+                  style="background-color: rgb(107, 105, 214)"
+                  ></option>
+               <option
+                  value="rgb(135, 100, 184)"
+                  style="background-color: rgb(135, 100, 184)"
+                  ></option>
+               <option
+                  value="rgb(116, 77, 169)"
+                  style="background-color: rgb(116, 77, 169)"
+                  ></option>
+               <option
+                  value="rgb(177, 70, 194)"
+                  style="background-color: rgb(177, 70, 194)"
+                  ></option>
+               <option
+                  value="rgb(136, 23, 152)"
+                  style="background-color: rgb(136, 23, 152)"
+                  ></option>
+               <option
+                  value="rgb(0, 153, 188)"
+                  style="background-color: rgb(0, 153, 188)"
+                  ></option>
+               <option
+                  value="rgb(0, 183, 195)"
+                  style="background-color: rgb(0, 183, 195)"
+                  ></option>
+               <option
+                  value="rgb(45, 125, 154)"
+                  style="background-color: rgb(45, 125, 154)"
+                  ></option>
+               <option
+                  value="rgb(3, 131, 135)"
+                  style="background-color: rgb(3, 131, 135)"
+                  ></option>
+               <option
+                  value="rgb(0, 178, 148)"
+                  style="background-color: rgb(0, 178, 148)"
+                  ></option>
+               <option
+                  value="rgb(1, 133, 116)"
+                  style="background-color: rgb(1, 133, 116)"
+                  ></option>
+               <option
+                  value="rgb(0, 200, 104)"
+                  style="background-color: rgb(0, 200, 104)"
+                  ></option>
+               <option
+                  value="rgb(15, 129, 58)"
+                  style="background-color: rgb(15, 129, 58)"
+                  ></option>
+               <option
+                  value="rgb(119, 114, 113)"
+                  style="background-color: rgb(119, 114, 113)"
+                  ></option>
+               <option
+                  value="rgb(93, 90, 88)"
+                  style="background-color: rgb(93, 90, 88)"
+                  ></option>
+               <option
+                  value="rgb(104, 118, 138)"
+                  style="background-color: rgb(104, 118, 138)"
+                  ></option>
+               <option
+                  value="rgb(81, 92, 107)"
+                  style="background-color: rgb(81, 92, 107)"
+                  ></option>
+               <option
+                  value="rgb(79, 90, 105)"
+                  style="background-color: rgb(79, 90, 105)"
+                  ></option>
+               <option
+                  value="rgb(86, 124, 115)"
+                  style="background-color: rgb(86, 124, 115)"
+                  ></option>
+               <option
+                  value="rgb(72, 104, 96)"
+                  style="background-color: rgb(72, 104, 96)"
+                  ></option>
+               <option
+                  value="rgb(73, 130, 5)"
+                  style="background-color: rgb(73, 130, 5)"
+                  ></option>
+               <option
+                  value="rgb(132, 117, 69)"
+                  style="background-color: rgb(132, 117, 69)"
+                  ></option>
+               <option
+                  value="rgb(16, 124, 16)"
+                  style="background-color: rgb(16, 124, 16)"
+                  ></option>
+               <option
+                  value="rgb(126, 115, 95)"
+                  style="background-color: rgb(126, 115, 95)"
+                  ></option>
+            </select>
+         </td>
+         <br/><br/> 
+         <td valign="middle">Graph Color:</td>
+         <td valign="middle">
+            <select id="graphcolor" name="graph" style="width:100;">
+               <option value='rgb(66, 156, 227)' style='background-color:rgb(66, 156, 227)'>Default</option>
+               <option value='rgb(253, 183, 0)' style='background-color:rgb(253, 183, 0)'></option>
+               <option value='rgb(255, 140, 0)' style='background-color:rgb(255, 140, 0)'></option>
+               <option value='rgb(247, 99, 12)' style='background-color:rgb(247, 99, 12)'></option>
+               <option value='rgb(197, 78, 16)' style='background-color:rgb(197, 78, 16)'></option>
+               <option value='rgb(218, 59, 1)'  style='background-color:rgb(218, 59, 1)'></option>
+               <option value='rgb(239, 105, 80)' style='background-color:rgb(239, 105, 80)'></option>
+               <option value='rgb(209, 52, 56)' style='background-color:rgb(209, 52, 56)'></option>
+               <option value='rgb(255, 67, 67)' style='background-color:rgb(255, 67, 67)'></option>
+               <option value='rgb(231, 72, 86)' style='background-color:rgb(231, 72, 86)'></option>
+               <option value='rgb(232, 17, 35)' style='background-color:rgb(232, 17, 35)'></option>
+               <option value='rgb(234, 0, 94)'  style='background-color:rgb(234, 0, 94)'></option>
+               <option value='rgb(195, 0, 82)'  style='background-color:rgb(195, 0, 82)'></option>
+               <option value='rgb(227, 0, 140)' style='background-color:rgb(227, 0, 140)'></option>
+               <option value='rgb(191, 0, 119)' style='background-color:rgb(191, 0, 119)'></option>
+               <option value='rgb(194, 57, 179)' style='background-color:rgb(194, 57, 179)'></option>
+               <option value='rgb(154, 0, 137)'  style='background-color:rgb(154, 0, 137)'></option>
+               <option value='rgb(0, 120, 215)' style='background-color:rgb(0, 120, 215)'></option>
+               <option value='rgb(0, 99, 177)' style='background-color:rgb(0, 99, 177)'></option>
+               <option value='rgb(142, 140, 216)' style='background-color:rgb(142, 140, 216)'></option>
+               <option value='rgb(107, 105, 214)' style='background-color:rgb(107, 105, 214)'></option>
+               <option value='rgb(135, 100, 184)' style='background-color:rgb(135, 100, 184)'></option>
+               <option value='rgb(116, 77, 169)' style='background-color:rgb(116, 77, 169)'></option>
+               <option value='rgb(177, 70, 194)' style='background-color:rgb(177, 70, 194)'></option>
+               <option value='rgb(136, 23, 152)' style='background-color:rgb(136, 23, 152)'></option>
+               <option value='rgb(0, 153, 188)' style='background-color:rgb(0, 153, 188)'></option>
+               <option value='rgb(0, 183, 195)' style='background-color:rgb(0, 183, 195)'></option>
+               <option value='rgb(45, 125, 154)' style='background-color:rgb(45, 125, 154)'></option>
+               <option value='rgb(3, 131, 135)' style='background-color:rgb(3, 131, 135)'></option>
+               <option value='rgb(0, 178, 148)' style='background-color:rgb(0, 178, 148)'></option>
+               <option value='rgb(1, 133, 116)' style='background-color:rgb(1, 133, 116)'></option>
+               <option value='rgb(0, 200, 104)' style='background-color:rgb(0, 200, 104)'></option>
+               <option value='rgb(15, 129, 58)' style='background-color:rgb(15, 129, 58)'></option>
+               <option value='rgb(119, 114, 113)' style='background-color:rgb(119, 114, 113)'></option>
+               <option value='rgb(93, 90, 88)' style='background-color:rgb(93, 90, 88)'></option>
+               <option value='rgb(104, 118, 138)' style='background-color:rgb(104, 118, 138)'></option>
+               <option value='rgb(81, 92, 107)' style='background-color:rgb(81, 92, 107)'></option>
+               <option value='rgb(79, 90, 105)' style='background-color:rgb(79, 90, 105)'></option>
+               <option value='rgb(86, 124, 115)' style='background-color:rgb(86, 124, 115)'></option>
+               <option value='rgb(72, 104, 96)' style='background-color:rgb(72, 104, 96)'></option>
+               <option value='rgb(73, 130, 5)' style='background-color:rgb(73, 130, 5)'></option>
+               <option value='rgb(132, 117, 69)' style='background-color:rgb(132, 117, 69)'></option>
+               <option value='rgb(16, 124, 16)' style='background-color:rgb(16, 124, 16)'></option>
+               <option value='rgb(126, 115, 95)' style='background-color:rgb(126, 115, 95)'></option>
+            </select>
+         </td>
+         <br/>
+      </span>
+      <br>
+      Developed by Fahd Daher 
+      <br>
+      <br>
+      <a href="https://www.paypal.com/paypalme/fahddaher" style="color:#000000">Help me to make more gadgets.</a> 
+   </body>
+</html>

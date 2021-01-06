@@ -1,0 +1,47 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="MSThemeCompatible" content="yes" />
+    <title>Spectrum Analyser</title>
+    <script
+      src="gadget.js"
+      language="javascript"
+      type="text/javascript"
+    ></script>
+  </head>
+  <style>
+    * {
+      position: absolute;
+      font-size: 12px;
+      font-family: Segoe UI;
+      color: white;
+    }
+
+    body {
+      margin: 0px;
+    }
+
+    v\:* {
+      behavior: url(#default#vml);
+      position: absolute;
+    }
+  </style>
+  <body onload="startUpGadget()" onunload="terminate()">
+    <div id="divGraph" style="top: 0px; left: 0px"></div>
+  </body>
+  <script language="javascript" type="text/javascript">
+    try {
+      if (System.Gadget.Settings.readString("gSkin") != "")
+        var skinPath = "themes/" + System.Gadget.Settings.readString("gSkin");
+      else var skinPath = "themes/default";
+
+      var scriptInclude =
+        '<script src="' +
+        skinPath +
+        '\\skin.js" language="javascript" type="text/javascript"></script' +
+        ">";
+      document.body.appendChild(document.createElement(scriptInclude));
+    } catch (err) {
+      System.Debug.outputString("loadSkin: " + err.name + " - " + err.message);
+    }
+  </script>
+</html>

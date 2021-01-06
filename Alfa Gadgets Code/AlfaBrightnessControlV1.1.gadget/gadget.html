@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alfa Brightness Control</title>
+    <script language="vbscript">
+      'returns the supported brightness levels as a pipe-delimited string
+      Function GetBrightnessLevels()
+          strComputer = "."
+          Set objSWbemServices = GetObject("winmgmts:\\" & strComputer & "\root\WMI")
+          Set colSWbemObjectSet = objSWbemServices.ExecQuery("SELECT * FROM WMIMonitorBrightness")
+
+          Dim BrightnessLevels
+          BrightnessLevels = ""
+
+          For Each objSWbemObject in colSWbemObjectSet
+           For i=0 to objSWbemObject.Levels-1
+            BrightnessLevels = BrightnessLevels + CStr(objSWbemObject.Level(i)) + "|"
+           Next
+
+           Exit For 'only want one object
+          Next
+
+          GetBrightnessLevels = BrightnessLevels
+      End Function
+
+      'returns the current brightness level
+      Function GetCurrentBrightness()
+          strComputer = "."
+          Set objSWbemServices = GetObject("winmgmts:\\" & strComputer & "\root\WMI")
+          Set colSWbemObjectSet = objSWbemServices.ExecQuery("SELECT * FROM WMIMonitorBrightness")
+
+          Dim curBrightness
+          curBrightness = 0
+
+          For Each objSWbemObject in colSWbemObjectSet
+           curBrightness = objSWbemObject.CurrentBrightness
+
+           Exit For 'only want one object
+          Next
+
+          GetCurrentBrightness = curBrightness
+      End Function
+
+      'sets the specified brightness value as the current brightness level
+      Function SetCurrentBrightness(BrightnessValue)
+          Set WshShellObj = CreateObject("WScript.Shell")
+
+          'run external app to do brightness setting as cannot do it using vbscript (uint64 not supported)
+          WshShellObj.Run """" + System.Gadget.path + "\DisplayBrightnessConsole.exe"" " + CStr(BrightnessValue), 0, True
+      End Function
+    </script>
+    <script src="Js/main.js" language="javascript"></script>
+    <link href="css/gadget.css" rel="stylesheet" />
+  </head>
+  <body id="body" onload="onload()">
+    <label id="label">Brightness :</label>
+    <div id="divvolback">
+      <div id="volback" style="width: 300px; height: 30px"></div>
+    </div>
+
+    <div id="divvol">
+      <div id="vol" style="width: 300px; height: 30px"></div>
+    </div>
+
+    <div id="BrightnessLevelsBar"></div>
+  </body>
+</html>
