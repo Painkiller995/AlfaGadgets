@@ -21,8 +21,6 @@ var oFSO = new ActiveXObject("Scripting.FileSystemObject");
 
 System.Gadget.settingsUI = "Settings.html";
 System.Gadget.visibilityChanged = setupTimers;
-System.Gadget.onDock = fixFocus;
-System.Gadget.onUndock = fixFocus;
 System.Gadget.onSettingsClosed = fixFocus;
 
 var bDebug = oFSO.FileExists(gadgetPath + "\\debug.txt");
