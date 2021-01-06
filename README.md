@@ -40,7 +40,9 @@ I will build:
 
 # History
 
-26/12/2020    Alfa Gadgets resizer Tool , AlfaGadgets Auto installer
+06/01/2021   New Gadget AlfaSpectrumAnalyzer V1.1 
+
+26/12/2020   Alfa Gadgets resizer Tool , AlfaGadgets Auto installer
 
 24/12/2020   Add Wifi feature for AlfaNetworkMeter.
 
