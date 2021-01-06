@@ -20,7 +20,7 @@ if you use AlfaGadgets you will get realtime gadget render, thank to microsoft s
 # Installation
 1- install 8GadgetPack or Gadgetarian or any similar program.
 
-2- install [AlfaGadgetsInstaller.exe](https://github.com/fahdd95/AlfaGadgets/releases/tag/1.1) or go to [Alfa Gadgets](https://github.com/fahdd95/AlfaGadgets/tree/master/Alfa%20Gadgets) folder and download & install gadgets.
+2- install [AlfaGadgetsInstaller.exe](https://github.com/fahdd95/AlfaGadgets/releases/tag/1.1) or go to [Alfa Gadgets](https://github.com/fahdd95/AlfaGadgets/tree/master/Alfa%20Gadgets%20Installer%20Files) folder and download & install gadgets.
 
 **Note:** all gadgets will work immediately except Network meter because you have to give the dll permission.
 
