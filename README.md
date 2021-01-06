@@ -40,7 +40,7 @@ I will build:
 
 # History
 
-06/01/2021   New Gadget AlfaSpectrumAnalyzer V1.1 
+06/01/2021   New Gadget (AlfaSpectrumAnalyzer V1.1)
 
 26/12/2020   Alfa Gadgets resizer Tool , AlfaGadgets Auto installer
 
