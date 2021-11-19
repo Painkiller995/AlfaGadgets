@@ -1,0 +1,40 @@
+<html>
+<head>
+<style type="text/css">
+*{
+	margin:0 auto;
+	padding:0;
+	text-align:center;
+}
+div{
+	width:400px;
+	height:200px;
+	background:#000;
+	border:red solid 1px;
+	margin-bottom:20px;
+	color:#fff;
+	text-align:center;
+}
+.curved {
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+behavior:url(border-radius.htc);
+}
+div.img{
+	border:1px solid #fff;
+	background:url(karzzz.jpg) no-repeat;
+	color:red;
+	text-align:right;
+}
+</style>
+</head>
+<body>
+<h1>Demo of Curved corner using htc</h1>
+<h2>This demo shows how htc works perfect for IE6 and CSS3 behavior for all other mordern browser. For information how to use this css trick, <a href="http://www.htmlremix.com" title="htmlremix.com">www.htmlremix.com</a></h2>
+<div>Curveless div</div>
+<div class="curved">Curvd div</div>
+<div class="img">Image</div>
+<div class="img curved">Image got cured</div>
+
+</body>
+</html>
